@@ -19,8 +19,12 @@ class TodosService{
         ProxyState.todos = ProxyState.todos.filter(t => t.id != id)
         console.log(ProxyState.todos);
     }
-    
 
+    async checkTodo(id){
+        let Todo = ProxyState.todos.find(t => t.id === id)
+        Todo.completed = !Todo.completed
+        await SandBoxAPI.put(`jared/todos/${id}`, Todo)
+    }
 }
 
 export const todosService = new TodosService()

@@ -16,7 +16,6 @@ export class TodosController{
         this.getTodos()
         ProxyState.on('todos', _draw)
     }
-
     getTodos(){
         try {
             todosService.getTodos()
@@ -37,7 +36,6 @@ export class TodosController{
             console.error(error.message)
         }
     }
-
     removeTodo(id){
         try {
             todosService.removeTodo(id)
@@ -45,4 +43,11 @@ export class TodosController{
             console.error(error.message)
         }
     }
+    checkTodo(id){
+    try {
+        todosService.checkTodo(id)
+    } catch (error) {
+        console.error(error.message)
+    }
+}
 }
