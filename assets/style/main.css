@@ -10696,3 +10696,7 @@ main {
 }
 
 /*# sourceMappingURL=main.css.map */
+
+.my-todo-card {
+  max-width: max-content;
+}
