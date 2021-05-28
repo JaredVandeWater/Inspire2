@@ -7,7 +7,10 @@ export class Weather{
 
     get Template(){
         return /*html*/ `
-        
+        <div class="d-flex">
+        <img src="${this.icon}"/>
+        <h1>${this.temp}</h1>
+        </div>
         `
     }
 
