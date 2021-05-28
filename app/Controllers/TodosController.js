@@ -1,5 +1,6 @@
 import { ProxyState } from "../AppState.js"
 import { todosService } from "../Services/TodosService.js"
+import { clock } from "../Utils/ClockClock.js";
 
 function _draw(){
     let template = ''
@@ -13,6 +14,7 @@ function _draw(){
 
 export class TodosController{
     constructor(){
+        clock()
         this.getTodos()
         ProxyState.on('todos', _draw)
     }
