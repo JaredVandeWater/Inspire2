@@ -9,6 +9,18 @@ class TodosService{
         ProxyState.todos = res.data.map(t => new Todo(t))
     }
 
+    async addTodo(newTodo){
+        let res = await SandBoxAPI.post('jared/todos', newTodo)
+        ProxyState.todos = [...ProxyState.todos, new Todo(res.data)]
+    }
+
+    async removeTodo(id){
+        await SandBoxAPI.delete(`jared/todos/${id}`)
+        ProxyState.todos = ProxyState.todos.filter(t => t.id != id)
+        console.log(ProxyState.todos);
+    }
+    
+
 }
 
 export const todosService = new TodosService()

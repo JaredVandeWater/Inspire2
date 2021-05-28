@@ -39,8 +39,8 @@
                             <ul id="TodosHTML" class="list-group list-group-flush">
                             </ul>
                             <div class="d-flex justify-content-center">
-                                <form onsubmit="app.todosController.addTodo()">
-                                    <input placeholder="New Todo..." type="text">
+                                <form onsubmit="app.todosController.addTodo(event)">
+                                    <input placeholder="New Todo..." type="text" id="description">
                                     <button class="btn btn-primary" type="submit"><i class="fas fa-plus"></i></button>
                                 </form>
                             </div>

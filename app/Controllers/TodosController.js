@@ -22,7 +22,27 @@ export class TodosController{
             todosService.getTodos()
         } catch (error) {
            console.error(error.message) 
-        }
+        }}
 
-    AddTodo(){}
-}}
+    addTodo(event){
+        try {
+            event.preventDefault()
+            let form = event.target
+            let newTodo = {
+                description: form.description.value
+            }
+
+            todosService.addTodo(newTodo)
+        } catch (error) {
+            console.error(error.message)
+        }
+    }
+
+    removeTodo(id){
+        try {
+            todosService.removeTodo(id)
+        } catch (error) {
+            console.error(error.message)
+        }
+    }
+}
