@@ -10699,4 +10699,13 @@ main {
 
 .my-todo-card {
   max-width: max-content;
+  min-height: 100vh;
+}
+
+.my-left-c{
+  max-width: 20vw;
+  min-width: 13rem;
+}
+.my-list-t{
+  overflow-wrap: anywhere;
 }
