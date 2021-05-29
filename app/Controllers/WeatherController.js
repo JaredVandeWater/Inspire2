@@ -5,8 +5,8 @@ import { weatherService } from "../Services/WeatherService.js"
 
 
 function _draw(){
-    template = ''
-    
+    document.getElementById('weatherHTML').innerHTML = ProxyState.weather.Template
+    console.log('draw');
 }
 export class WeatherController{
     constructor(){
@@ -20,5 +20,9 @@ export class WeatherController{
         } catch (error) {
             console.error(error.message)
         }
+    }
+
+    changeTempType(tempType){
+        weatherService.changeTempType(tempType)
     }
 }

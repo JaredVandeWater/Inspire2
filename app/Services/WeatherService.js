@@ -9,6 +9,17 @@ class WeatherService{
         console.log(ProxyState.weather);
     }
 
+    changeTempType(tempType){
+        let w = ProxyState.weather
+        w.tempType++
+        if (tempType > 2){tempType = 0}
+        else if (tempType === 0){w.currentTemp = w.kelvin}
+        else if (tempType === 1){w.currentTemp = w.getC()}
+        else if (tempType === 2){w.currentTemp = w.getF()}
+        console.log(ProxyState.weather.tempType);
+        console.log(w.currentTemp);
+    }
+
 
 }
 
