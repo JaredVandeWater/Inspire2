@@ -6,7 +6,8 @@ export class Quote{
 
     get Template(){
         return /*html*/`
-        <h3>${this.quote}</h3>
+        <button class="btn my-quote" onclick="app.quoteController.getQuote()"><h3>${this.quote}</h3></button>
+        <h5 class="my-author">${this.author}</h5>
         `
     }
 }
