@@ -42,7 +42,7 @@ export class Weather{
             <h1>${capFirstLetters(this.type)}</h1>
         </div>
         <div class="d-flex">
-            <img src="http://openweathermap.org/img/wn/${this.icon}@2x.png"/>
+            <img class="rounded-circle my-weather-icon" src="http://openweathermap.org/img/wn/${this.icon}@2x.png"/>
             <button onclick="app.weatherController.changeTempType()" type="button" class="btn"><h1>${this.currentTemp}\u00B0 ${this.letter} </h1></button>
         </div>
         `
