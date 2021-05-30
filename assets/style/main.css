@@ -10711,7 +10711,6 @@ main {
 
 .my-todo-card {
   background-color: rgba(0, 0, 0, 0.137);
-  max-width: max-content;
   min-height: 100vh;
 }
 
@@ -10723,6 +10722,11 @@ main {
   overflow-wrap: anywhere;
 }
 
+.my-blue-font{
+  font-family: 'Shadows Into Light', cursive;
+  color: #bde8ff;
+}
+
 .my-bgimage{
   z-index: -1;
   min-height: 100vh;
@@ -10730,17 +10734,32 @@ main {
   position:absolute;
   top:0;
   left:0;
+  filter: grayscale(50%) blur(3px) brightness(60%);
 }
 
 .my-quote{
+  font-size: xx-large;
 }
 
 .my-author{
-  color: transparent;
-  transition: all .8s;
+  opacity: 0;
+  font-size: large;
+  transition:all .8s;
+
 
 }
 .my-quote:hover + .my-author{
-  color: #000;
+  opacity: 1;
+}
+
+.my-quote:hover{
+  color: #a2d5f0;
+}
+
+.cursor-none{
+  cursor: default;
+}
+.cursor-point{
+  cursor: pointer;
 }
 
