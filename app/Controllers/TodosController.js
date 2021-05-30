@@ -50,6 +50,9 @@ export class TodosController{
         todosService.checkTodo(id)
     } catch (error) {
         console.error(error.message)
+    }}
+
+    updateCount(){
+        todosService.updateCount()
     }
-}
 }
