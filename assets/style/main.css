@@ -10773,13 +10773,23 @@ main {
  height: 5px;
 }
 ::-webkit-scrollbar-thumb {
- background: linear-gradient(13deg, #d4fff9 14%,#3dd3db 78%);
+ background-color: rgba(88, 175, 88, 0.664);
  border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover{
- background: linear-gradient(360deg, #d2f7f6 14%,#87f4fa 62%);
+ background-color: rgb(88, 175, 88);
 }
 ::-webkit-scrollbar-track{
- background: #ffffff;
+ background: #ffffff00;
  border-radius: 10px;
+}
+
+.leftscrollbar {
+  height: 100px;
+  overflow: auto;
+  direction: rtl;
+}
+
+.leftscrollbar>div {
+  direction: ltr;
 }
