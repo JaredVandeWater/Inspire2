@@ -8,7 +8,7 @@ export class Todo{
     
     get TodoTemplate(){
         return /*html*/`
-        <div class="d-flex justify-content-between ml-2">
+        <div class="d-flex justify-content-between ml-4 mr-2">
             <input onclick="app.todosController.checkTodo('${this.id}')" type="checkbox" ${this.completed ? "checked" : ""} class="form-check-input" id="exampleCheck1">
             <label class="form-check-label sr-only" for="exampleCheck1">Todo Check</label>
             <li class="my-list-t mb-2">${this.description}</li>
