@@ -27,12 +27,20 @@
     <main>
         <div id="imageHTML">
         </div>
+        <div id="my-todo-left" class="my-todo-left mt-1 ml-2 d-none">
+            <button class="btn"><i onclick="app.todosController.todosLeft()"
+                    class="text-danger fas fa-arrow-right"></i></button>
+        </div>
+        <div id="my-todo-right" class="my-todo-right mt-1 ml-2">
+            <button class="btn text-danger"><i onclick="app.todosController.todosRight()"
+                    class="fas fa-arrow-left"></i></button>
+        </div>
         <div class="d-flex">
-            <div class="container-fluid my-left-c">
+            <div id="listHTML" class="container-fluid my-left-c">
                 <div class="row flex-column">
                     <div class="col card my-todo-card p-0 pl-2 my-blue-font">
-                        <div class="card-title text-center m-0">
-                            <h3 class="mt-2">Todos</h3>
+                        <div class="card-title text-center m-0 mt-2">
+                            <h3>Todos</h3>
                             <h5 id="todosCountHTML">0/0</h5>
                         </div>
 
@@ -61,11 +69,11 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div id="quoteHTML">
+                    <div id="weatherHTML">
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div id="weatherHTML">
+                    <div id="quoteHTML">
                     </div>
                 </div>
             </div>
