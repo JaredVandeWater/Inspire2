@@ -10736,6 +10736,7 @@ main {
 
 .my-quote{
   font-size: xx-large;
+  text-transform: uppercase;
 }
 
 .my-author{
@@ -10809,4 +10810,20 @@ main {
 .my-left-c.todoListOffScreen{
   position:absolute;
   left: -20rem;
+}
+.my-clock{
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+}
+.my-temp:hover{
+  color: #a2d5f0;
+}
+.my-photo-reset{
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+}
+.cpuFont{
+  font-family: 'Orbitron', sans-serif;
 }

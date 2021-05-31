@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Squada+One&display=swap"
         rel="stylesheet">
@@ -27,13 +28,16 @@
     <main>
         <div id="imageHTML">
         </div>
-        <div id="my-todo-left" class="my-todo-left mt-1 ml-2 d-none">
-            <button class="btn"><i onclick="app.todosController.todosLeft()"
-                    class="text-danger fas fa-arrow-right"></i></button>
+        <div onclick="app.todosController.todosLeft()" id="my-todo-left" class="my-todo-left mt-1 ml-2 d-none">
+            <button class="btn"><i class="text-danger fas fa-arrow-right"></i></button>
         </div>
         <div id="my-todo-right" class="my-todo-right mt-1 ml-2">
-            <button class="btn text-danger"><i onclick="app.todosController.todosRight()"
+            <button onclick="app.todosController.todosRight()" class="btn text-danger"><i
                     class="fas fa-arrow-left"></i></button>
+        </div>
+        <div id="my-photo-reset" class="my-photo-reset mb-1 mr-2">
+            <button onclick="app.imageController.getImage()" class="btn text-danger"><i
+                    class="fas fa-image"></i></button>
         </div>
         <div class="d-flex">
             <div id="listHTML" class="container-fluid my-left-c">
@@ -41,7 +45,7 @@
                     <div class="col card my-todo-card p-0 pl-2 my-blue-font">
                         <div class="card-title text-center m-0 mt-2">
                             <h3>Todos</h3>
-                            <h5 id="todosCountHTML">0/0</h5>
+                            <p id="todosCountHTML" class="cpuFont">0/0</p>
                         </div>
 
                         <div class="col card-body align-self-center p-0 my-task-area leftscrollbar">
@@ -63,16 +67,35 @@
                     </div>
                 </div>
             </div>
-            <div class="container-fluid">
-                <div class="row justify-content-end">
-                    <div id="clock">
+            <div class="container-fluid d-flex 
+            flex-column">
+                <div class="row justify-content-end my-clock text-danger p-2">
+                    <div id="clockHTML">
                     </div>
+                    <script type="text/javascript">
+                        function GetClock() {
+                            var d = new Date();
+                            var nhour = d.getHours(), nmin = d.getMinutes(), ap;
+                            if (nhour == 0) { ap = " AM"; nhour = 12; }
+                            else if (nhour < 12) { ap = " AM"; }
+                            else if (nhour == 12) { ap = " PM"; }
+                            else if (nhour > 12) { ap = " PM"; nhour -= 12; }
+
+                            if (nmin <= 9) nmin = "0" + nmin;
+
+                            var clocktext = "" + nhour + ":" + nmin + ap + "";
+                            document.getElementById('clockHTML').innerHTML = clocktext;
+                        }
+
+                        GetClock();
+                        setInterval(GetClock, 1000);
+                    </script>
                 </div>
-                <div class="row justify-content-center">
+                <div class="row justify-content-center py-5">
                     <div id="weatherHTML">
                     </div>
                 </div>
-                <div class="row justify-content-center">
+                <div class="row justify-content-center pt-5">
                     <div id="quoteHTML">
                     </div>
                 </div>
