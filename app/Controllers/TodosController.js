@@ -14,6 +14,7 @@ function _draw(){
 export class TodosController{
     constructor(){
         this.getTodos()
+        this.todosRight()
         ProxyState.on('todos', _draw)
     }
     todosRight(){

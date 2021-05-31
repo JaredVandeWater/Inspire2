@@ -10832,3 +10832,9 @@ main {
   color: rgba(255, 0, 0, 0.514)
 
 }
+
+hr {
+  width: 30rem;
+  border: 1px solid rgb(139, 193, 255);
+  border-radius: 10px;
+}

@@ -6,7 +6,7 @@ export class Quote{
 
     get Template(){
         return /*html*/`
-        <button class="btn my-quote my-blue-font" onclick="app.quoteController.getQuote()">
+        <button class="btn my-quote my-blue-font mx-4" onclick="app.quoteController.getQuote()">
             <p>${this.quote}</p>
         </button>
         <h5 class="my-author my-blue-font text-center">-${this.author}</h5>

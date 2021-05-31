@@ -6,6 +6,8 @@ class WeatherService{
     async getWeather(){
         let res = await SandBoxAPI.get('/weather')
         ProxyState.weather= new Weather(res.data)
+        this.changeTempType()
+        this.changeTempType()
     }
 
     changeTempType(){
