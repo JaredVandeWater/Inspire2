@@ -30,7 +30,6 @@ class TodosService{
     }
     updateCount(){      
         let t =`${ProxyState.todos.filter(t => t.completed===true).length}/${ProxyState.todos.length}` 
-        console.log(t);
         document.getElementById("todosCountHTML").innerText = t
     }
 

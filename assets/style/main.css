@@ -10697,6 +10697,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-color: black;
+  min-width:700px
 }
 
 main {
@@ -10767,15 +10768,15 @@ main {
 }
 
 ::-webkit-scrollbar {
- width: 5px;
+ width: 2px;
  height: 5px;
 }
 ::-webkit-scrollbar-thumb {
- background-color: rgba(88, 175, 88, 0.664);
+ background-color: var(--danger);
  border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover{
- background-color: rgb(88, 175, 88);
+ background-color: rgba(255, 1, 1, 0.534);
 }
 ::-webkit-scrollbar-track{
  background: #ffffff00;
@@ -10792,13 +10793,16 @@ main {
   direction: ltr;
 }
 .my-todo-left{
-  position: absolute;
   z-index: 1;
 }
 .my-todo-right{
-  position: absolute;
   z-index: 1;
 }
+.myalignTop{
+  vertical-align: top;
+}
+
+
 
 .my-left-c{
   max-width: 15rem;
@@ -10818,12 +10822,13 @@ main {
 .my-temp:hover{
   color: #a2d5f0;
 }
-.my-photo-reset{
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-  right: 0;
-}
 .cpuFont{
   font-family: 'Orbitron', sans-serif;
+}
+.my-footer{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: rgba(255, 0, 0, 0.514)
+
 }

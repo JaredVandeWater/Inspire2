@@ -17,13 +17,11 @@ export class TodosController{
         ProxyState.on('todos', _draw)
     }
     todosRight(){
-        console.log('r - l');
         document.getElementById('my-todo-left').classList.remove('d-none')
         document.getElementById('my-todo-right').classList.add('d-none')
         document.getElementById('listHTML').classList.add('todoListOffScreen')
     }
     todosLeft(){
-        console.log('l - r');
         document.getElementById('my-todo-right').classList.remove('d-none')
         document.getElementById('my-todo-left').classList.add('d-none')
         document.getElementById('listHTML').classList.remove('todoListOffScreen')
@@ -42,6 +40,7 @@ export class TodosController{
             let newTodo = {
                 description: form.description.value
             }
+            form.reset()
 
             todosService.addTodo(newTodo)
         } catch (error) {

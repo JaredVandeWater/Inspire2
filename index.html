@@ -28,21 +28,10 @@
     <main>
         <div id="imageHTML">
         </div>
-        <div onclick="app.todosController.todosLeft()" id="my-todo-left" class="my-todo-left mt-1 ml-2 d-none">
-            <button class="btn"><i class="text-danger fas fa-arrow-right"></i></button>
-        </div>
-        <div id="my-todo-right" class="my-todo-right mt-1 ml-2">
-            <button onclick="app.todosController.todosRight()" class="btn text-danger"><i
-                    class="fas fa-arrow-left"></i></button>
-        </div>
-        <div id="my-photo-reset" class="my-photo-reset mb-1 mr-2">
-            <button onclick="app.imageController.getImage()" class="btn text-danger"><i
-                    class="fas fa-image"></i></button>
-        </div>
         <div class="d-flex">
             <div id="listHTML" class="container-fluid my-left-c">
                 <div class="row flex-column">
-                    <div class="col card my-todo-card p-0 pl-2 my-blue-font">
+                    <div class="col card my-todo-card p-0 pl-0 my-blue-font">
                         <div class="card-title text-center m-0 mt-2">
                             <h3>Todos</h3>
                             <p id="todosCountHTML" class="cpuFont">0/0</p>
@@ -57,8 +46,8 @@
 
                         <div class="my-3">
                             <form onsubmit="app.todosController.addTodo(event)">
-                                <div class="my-text-bar d-flex">
-                                    <input placeholder="New Todo..." type="text" id="description">
+                                <div class="my-text-bar d-flex justify-content-center">
+                                    <input placeholder="New Todo..." type="text" id="description" required>
                                     <button class="btn btn-primary" type="submit"><i class="fas fa-plus"></i></button>
                                 </div>
                             </form>
@@ -69,27 +58,45 @@
             </div>
             <div class="container-fluid d-flex 
             flex-column">
-                <div class="row justify-content-end my-clock text-danger p-2">
-                    <div id="clockHTML">
+                <div class="row my-clock text-danger p-3">
+                    <div class="col">
+                        <div class="d-flex justify-content-end" id="clockHTML">
+                        </div>
+                        <script type="text/javascript">
+                            function GetClock() {
+                                var d = new Date();
+                                var nhour = d.getHours(), nmin = d.getMinutes(), ap;
+                                if (nhour == 0) { ap = " AM"; nhour = 12; }
+                                else if (nhour < 12) { ap = " AM"; }
+                                else if (nhour == 12) { ap = " PM"; }
+                                else if (nhour > 12) { ap = " PM"; nhour -= 12; }
+
+                                if (nmin <= 9) nmin = "0" + nmin;
+
+                                var clocktext = "" + nhour + ":" + nmin + ap + "";
+                                document.getElementById('clockHTML').innerHTML = clocktext;
+                            }
+
+                            GetClock();
+                            setInterval(GetClock, 1000);
+                        </script>
+
+                        <div class="d-flex justify-content-end">
+                            <div onclick="app.todosController.todosLeft()" id="my-todo-left"
+                                class="my-todo-left d-none">
+                                <button class="btn p-0 m-0 px-1"><i class="text-danger fas fa-arrow-right"></i></button>
+                            </div>
+                            <div id="my-todo-right" class="my-todo-right">
+                                <button onclick="app.todosController.todosRight()"
+                                    class="btn text-danger p-0 m-0 px-1"><i class="fas fa-arrow-left"></i></button>
+                            </div>
+                            <div id="my-photo-reset" class="my-photo-reset">
+                                <button onclick="app.imageController.getImage()" class="btn text-danger p-0 m-0 px-1"><i
+                                        class="fas fa-image"></i></button>
+                            </div>
+                        </div>
+
                     </div>
-                    <script type="text/javascript">
-                        function GetClock() {
-                            var d = new Date();
-                            var nhour = d.getHours(), nmin = d.getMinutes(), ap;
-                            if (nhour == 0) { ap = " AM"; nhour = 12; }
-                            else if (nhour < 12) { ap = " AM"; }
-                            else if (nhour == 12) { ap = " PM"; }
-                            else if (nhour > 12) { ap = " PM"; nhour -= 12; }
-
-                            if (nmin <= 9) nmin = "0" + nmin;
-
-                            var clocktext = "" + nhour + ":" + nmin + ap + "";
-                            document.getElementById('clockHTML').innerHTML = clocktext;
-                        }
-
-                        GetClock();
-                        setInterval(GetClock, 1000);
-                    </script>
                 </div>
                 <div class="row justify-content-center py-5">
                     <div id="weatherHTML">
@@ -98,6 +105,13 @@
                 <div class="row justify-content-center pt-5">
                     <div id="quoteHTML">
                     </div>
+                </div>
+                <div class="d-flex justify-content-center my-footer p-2">
+                    <a target="_blank" href="https://www.linkedin.com/in/jaredvandewater/"><i title="LinkedIn"
+                            class="mdi mdi-linkedin align-self-center ml-2" aria-hidden="true"></i></a>
+                    <a target="_blank" title="Github" href="https://github.com/JaredVandeWater"><i
+                            class="mdi mdi-github align-self-center ml-2" aria-hidden="true"></i></a>
+                    <p class="px-2">Jared VandeWater 2021</p>
                 </div>
             </div>
         </div>
